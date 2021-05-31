@@ -1,10 +1,10 @@
 \section{Ergebnisse}
 \label{sec:ergebnisse}
 
-Die durchführten Versuchsabschnitte sind bei einer Raumtemperatur von \SI{24,1}{\celsius} durchgeführt worden. Während der Probennahme und der Bestimmung des Volumenstroms wie die Pumpe eine Durchschnittstemperatur von $\Theta = \SI{26}{\celsius}$ auf.
+Die durchführten Versuchsabschnitte sind bei einer Raumtemperatur von \mbox{$\vartheta_a=\SI{24,1}{\celsius}$} durchgeführt worden. Während der Probennahme und der Bestimmung des Volumenstroms wies die Pumpe eine Durchschnittstemperatur von $\vartheta = \SI{26}{\celsius}$ auf.
 
 \subsection*{Kalibrierung}
-Im vorangegangenen Versuchsabschnitt wurde bereits die Wellenlänge des Absorbtionsmaximums $\lambda_{max}$ erwähnt. In Tabelle \ref{tab:max} sind die ermittelten Wellenlängen der Lösungen K2, K4 und K5 aufgeführt.
+Im vorangegangenen Versuchsabschnitt wurde bereits die Wellenlänge des Absorptionsmaximums $\lambda_{max}$ erwähnt. In Tabelle \ref{tab:max} sind die ermittelten Wellenlängen der Lösungen K2, K4 und K5 aufgeführt.
 
 \begin{table}[h!]
 	\renewcommand*{\arraystretch}{1.2}
@@ -26,8 +26,8 @@ Im vorangegangenen Versuchsabschnitt wurde bereits die Wellenlänge des Absorbti
 \end{table}%
 \FloatBarrier
 
-Da alle drei Kalibrierlösungen in der Wellenlänge mit $\lambda_{max} =\SI{548}{\nano\meter}$ übereinstimmten, wurde dieser Wert auch in der weiteren Versuchsdurchführung zur Bestimmung der Absorbanzen genutzt.
-Die bestimmten Absorbanzen der Kalibrierlösungen K1 bis K6 sind in Tabelle \ref{tab:kalib} aufgeführt. In Abbildung \ref{dia:kalibrier} sind dann in Form einer Kalibriergerade die Konzentrationen in Abhängigkeit von den gemessenen Absorbanzen dargestellt.
+Da alle drei Kalibrierlösungen in der Wellenlänge mit ihrem Absorptionsmaximum $\lambda_{max} =\SI{548}{\nano\meter}$ übereinstimmten, wurde dieser Wert auch in der weiteren Versuchsdurchführung zur Bestimmung der Absorbanzen genutzt.
+Die bestimmten Absorbanzen der Kalibrierlösungen K1 bis K6 sind in Tabelle \ref{tab:kalib} aufgeführt. Weiterhin sind in Abbildung \ref{dia:kalibrier} in Form einer Kalibriergerade die Konzentrationen in Abhängigkeit von den gemessenen Absorbanzen dargestellt.
 
 \begin{table}[h!]
 	\renewcommand*{\arraystretch}{1.2}
@@ -60,12 +60,16 @@ Die bestimmten Absorbanzen der Kalibrierlösungen K1 bis K6 sind in Tabelle \ref
 					axis lines = left,
 					width = \textwidth,
 					height = 10cm,
+					xticklabel style={
+						/pgf/number format/fixed,
+						/pgf/number format/precision=2
+					},
 					xmin = 0,
 					xmax = 0.5,
 					ymin = 0,
 					ymax = 100,
-					%	ytick = {-4.5,-4,...,-1},
-					xtick = {0,0.1,...,1},
+					ytick = {0,10,...,100},
+					xtick = {0,0.05,...,1},
 					ylabel={Konzentration $c$ in $\left[\si{\micro \gram \per \liter}\right]$},
 					%y label style={at={(0,0.5)}},
 					xlabel={Absorbanz $A$ in $\left[-\right]$},
@@ -87,7 +91,7 @@ Die bestimmten Absorbanzen der Kalibrierlösungen K1 bis K6 sind in Tabelle \ref
 \FloatBarrier
 \vspace*{-20mm}
 \subsection*{Volumenstrom der Pumpe}
-Der Volumenstrom der Pumpe lässt sich aus den gemessenen Zeiten bestimmen, die die Seifenblasen benötigten, um sich innerhalb eines Volumens von \SI{500}{\milli \liter} zu bewegen (siehe Tab. \ref{tab:volumenstrom} Gl. \ref{gl:volumenstrom}).
+Der Volumenstrom der Pumpe lässt sich aus den gemessenen Zeiten bestimmen, die die Seifenblasen benötigten, um sich innerhalb eines Volumens von \SI{500}{\milli \liter} zu bewegen (siehe Tab. \ref{tab:volumenstrom}, Gl. \ref{gl:volumenstrom}).
 \vspace*{-5mm}
 \begin{table}[h!]
 	\renewcommand*{\arraystretch}{1.2}
@@ -112,13 +116,13 @@ Der Volumenstrom der Pumpe lässt sich aus den gemessenen Zeiten bestimmen, die 
 
 \begin{flalign}
 \label{gl:volumenstrom}
-	D &= \frac{V}{t} = \frac{\SI{0,5}{\liter}}{\SI{48,07}{\second}} = \SI{0,010402}{\liter \per \second} = \underline{\SI{0,624}{\liter \per \minute}}
+	D &= \frac{V}{t} = \frac{\SI{0,5}{\liter}}{\SI{48,07}{\second}} = \SI{104,02e-4}{\liter \per \second} = \underline{\SI{0,624}{\liter \per \minute}}
 \end{flalign}
 
 \newpage
 
 \subsection*{Messung der Raumluftprobe}
-Mit der nun aufgestellten Kalibriergerade können nun aus gemessenen Absorbanzen (siehe Tab. \ref{tab:probe}) der Raumluftprobe die Konzentrationen bestimmt werden (vgl. Gl.\ref{gl:probe}). Die Konzentration an \ce{NO2} in der Raumluft bestimmt sich mit Hilfe von Gleichung \ref{gl:volumen}
+Mit der nun aufgestellten Kalibriergerade können nun aus gemessenen Absorbanzen (siehe Tab. \ref{tab:probe}) der Raumluftprobe die Konzentrationen bestimmt werden (siehe Gl.\ref{gl:probe}). Die Konzentration an \ce{NO2} in der Raumluft bestimmt sich mit Hilfe von Gleichung \ref{gl:volumen}.
 
 \begin{flalign}
 \label{gl:probe}
@@ -128,7 +132,7 @@ Mit der nun aufgestellten Kalibriergerade können nun aus gemessenen Absorbanzen
 
 \begin{flalign}
 	\label{gl:volumen}
-	\beta &= \frac{m_A}{D*t}*\frac{T_n+\theta}{T_n+\theta_a} = \frac{\SI{0,153}{\micro\gram}}{\SI{0,624e-3}{\kmeter \per \minute}*\SI{90}{\min}}*\frac{\SI{273}{\kelvin}+\SI{26}{\kelvin}}{\SI{273}{\kelvin}+\SI{24,1}{\kelvin}}\\
+	\beta &= \frac{m_A}{D*t}*\frac{T_n+\vartheta}{T_n+\vartheta_a} = \frac{\SI{0,153}{\micro\gram}}{\SI{0,624e-3}{\kmeter \per \minute}*\SI{90}{\min}}*\frac{\SI{273}{\kelvin}+\SI{26}{\kelvin}}{\SI{273}{\kelvin}+\SI{24,1}{\kelvin}}\\
 		  &=\underline{\SI{1,95}{\micro\gram \per \kmeter}}
 \end{flalign}
 
@@ -152,7 +156,7 @@ Mit der nun aufgestellten Kalibriergerade können nun aus gemessenen Absorbanzen
 	%}
 \end{table}%
 \FloatBarrier
-Es fällt auf das alle drei Messungen und demzufolge auch der Mittelwert für $\beta$ kleiner sind als der Arbeitsplatzgrenzwert für \ce{NO2} laut Gefahrstoffverordnung ($\beta<$\SI{950}{\micro \gram \per \kmeter}).
+Es fällt auf, dass alle drei Messungen und demzufolge auch der Mittelwert für $\beta$ kleiner sind als der Arbeitsplatzgrenzwert für \ce{NO2} laut Gefahrstoffverordnung ($\beta<$\SI{950}{\micro \gram \per \kmeter}).
 
 
 

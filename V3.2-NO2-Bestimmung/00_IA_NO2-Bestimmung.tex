@@ -6,9 +6,9 @@
 %normal mit Bildern
 \documentclass[
 a4paper,
-12pt,
+11pt,
 draft=false]
-{scrartcl}
+{scrarticle}
 
 %angepasster \today Command
 \newcommand{\leadingzero}[1]{\ifnum #1<10 0\the#1\else\the#1\fi}
@@ -51,11 +51,10 @@ draft=false]
 %\usepackage[allfiguresdraft]{draftfigure}
 
 %Section als Chapter
-\RedeclareSectionCommand[%
-%beforeskip = -1sp plus -1sp minus -1sp,% kleinster negativer Wert, um den Absatzeinzug nach der Überschrift zu verhindern.
-afterskip = 1.5 \baselineskip plus -1sp minus 1sp,
-font = \Huge,
-]{section}
+%\RedeclareSectionCommand[%
+%afterskip = 1.5 \baselineskip plus -1sp minus 1sp,
+%font = \Huge,
+%]{section}
 
 \usepackage[left= 3cm,right = 2.5cm, bottom = 3cm,top = 2.5cm]{geometry}
 %\usepackage[onehalfspacing]{setspace}
@@ -206,7 +205,7 @@ hidelinks
 %\include{15_zusammenfassung}
 
 % Beendet eine Seite und erzwingt auf den nachfolgenden Seiten die Ausgabe aller Gleitobjekte (z.B. Abbildungen), die bislang definiert, aber noch nicht ausgegeben wurden. Dieser Befehl fügt, falls nötig, eine leere Seite ein, sodaß die nächste Seite nach den Gleitobjekten eine ungerade Seitennummer hat. 
-\cleardoubleoddpage
+%\cleardoubleoddpage
 
 % Pagestyle für Titelblatt leer
 \pagestyle{empty}
@@ -224,10 +223,22 @@ hidelinks
 %Inhaltsverzeichnis
 \tableofcontents
 \thispagestyle{empty}
+
+%Verzeichnis aller Bilder
+\label{sec:bilder}
+\listoffigures
+\addcontentsline{toc}{section}{Abbildungsverzeichnis}
+\thispagestyle{empty}
+
+%Verzeichnis aller Tabellen
+\label{sec:tabellen}
+\listoftables
+\addcontentsline{toc}{section}{Tabellenverzeichnis}
+\thispagestyle{empty}
 \newpage
 
 %Inhalt
-%\include{02_verzeichnisse}
+\include{02_verzeichnisse}
 
 %\include{0A_abkurzungsverzeichnis}
 

@@ -168,6 +168,14 @@ hidelinks %Entfernt Rahmen von Links
 %Fußnote mit Klammer
 \renewcommand*{\thefootnote}{(\arabic{footnote})}
 
+
+\makeatletter
+\let\l@sectionnonum\l@section
+\newcounter{sectionnonum}
+\renewcommand{\thesectionnonum}{}
+\makeatother
+
+
 % ============= Dokumentbeginn =============
 \begin{document}
 	
@@ -191,7 +199,11 @@ hidelinks %Entfernt Rahmen von Links
 
 %Titelblatt
 \include{01_titel} %Protokolle
-%\include{01_titel2} %Seminar-/Abschlussarbeit
+%\include{01_titel2} %Seminar-/Abschlussarbeit\\
+
+\includepdf[pages=1,addtotoc={1,sectionnonum,1,Protokolldeckblatt,label1}]{dokumente/deckblatt.pdf}
+
+\includepdf[pages=1, landscape,addtotoc={1,sectionnonum,1,${}^1$H-NMR-Spektrum mit Notizen,label2}]{dokumente/spektrum_notizen.pdf}
 
 % Pagestyle für Rest des Dokuments
 \pagestyle{fancy}
@@ -220,7 +232,7 @@ hidelinks %Entfernt Rahmen von Links
 
 %\input{011_fehlerbetrachtung}
 
-\include{08_literatur}
+\input{08_literatur}
 
 %\include{09_anhang}
 
